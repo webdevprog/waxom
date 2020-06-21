@@ -4,14 +4,55 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Home</title>
+    <link rel="stylesheet" href="../css/main.min.css"/>
   </head>
-  <body class="home">
-    <header>
-      <h1>Header</h1>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4"><a href="/"><img class="header__logo" src="/img/logo.svg"/></a>
+            <div class="header__logo-text">Waxom</div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="navigation">
+              <ul class="navigation__list">
+                <li class="navitagation__item"><a class="navitagation__link" href="#">Home</a></li>
+                <li class="navitagation__item"><a class="navitagation__link" href="#">About Us</a></li>
+                <li class="navitagation__item"><a class="navitagation__link" href="#">Portfolio</a></li>
+                <li class="navitagation__item"><a class="navitagation__link" href="#">Features</a></li>
+                <li class="navitagation__item"><a class="navitagation__link" href="#">Blog</a></li>
+                <li class="navitagation__item"><a class="navitagation__link" href="#">Pricing</a></li>
+                <li class="navitagation__item"><a class="navitagation__link" href="#">Shortcodes</a></li>
+                <li class="navitagation__item"><a class="navitagation__link" href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-2"><span class="icon icon-cart"></span><span class="icon icon-search"></span></div>
+        </div>
+      </div>
     </header>
-    <h1>Home</h1>
+    <section class="section section-slider">
+      <div class="swiper-container swiper-home">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img class="swiper-home__photo" src="/img/slider.jpg"/>
+            <div class="swiper-home__subTitle">Unique and Modern Design</div>
+            <div class="swiper-home__title">Portfolio PSD Template</div>
+            <div class="swiper-home__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+          </div>
+          <div class="swiper-slide"><img class="swiper-home__photo" src="/img/slider.jpg"/>
+            <div class="swiper-home__subTitle">Unique and Modern Design</div>
+            <div class="swiper-home__title">Portfolio PSD Template</div>
+            <div class="swiper-home__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
     <footer>
       <h2>Footer</h2>
     </footer>
   </body>
+  <script src="../js/scripts.min.js"></script>
 </html>

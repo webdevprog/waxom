@@ -1,2 +1,16 @@
-header
-    h1 Header
+header.header
+    .container
+        .row
+            .col-lg-4
+                a(href="/")
+                    img.header__logo(src="/img/logo.svg")
+                .header__logo-text Waxom
+            .col-lg-6
+                nav.navigation
+                    ul.navigation__list
+                        each item in menu
+                            li.navitagation__item
+                                a(href=item.link).navitagation__link= item.name
+            .col-lg-2
+                span.icon.icon-cart
+                span.icon.icon-search

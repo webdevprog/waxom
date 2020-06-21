@@ -3,8 +3,16 @@ extends ../base.pug
 block titleSite
     title= pages.home.title 
 
-block variables
-    - var pageClass = "home";
-
 block content
-    h1= pages.home.title
+    section.section.section-slider
+        .swiper-container.swiper-home
+            .swiper-wrapper
+                each slide in slider
+                    .swiper-slide
+                        img(src=slide.image).swiper-home__photo
+                        .swiper-home__subTitle= slide.subTitle
+                        .swiper-home__title= slide.title
+                        .swiper-home__text= slide.text
+            .swiper-pagination
+            .swiper-button-prev
+            .swiper-button-next
