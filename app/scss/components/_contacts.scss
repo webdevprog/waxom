@@ -1,0 +1,27 @@
+.social-container {}
+
+.social {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        width: $size-social;
+        height: $size-social;
+        line-height: $size-social;
+        font-size: $size-social / 2;
+        text-align: center;
+        border: 1px solid $color-social;
+        border-radius: $border-radius-social;
+        color: $color-social;
+
+        &:hover {
+            color: $color-white;
+            border-color: $color-hover-social;
+            background-color: $color-hover-social;
+        }
+
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+}

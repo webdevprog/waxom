@@ -1,0 +1,17 @@
+include ./config.pug
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        block titleSite
+            title base
+        block variables
+            - var pageClass = "";
+
+    body(class=pageClass)
+        include layout/header.pug
+        
+        block content
+
+        include layout/footer.pug

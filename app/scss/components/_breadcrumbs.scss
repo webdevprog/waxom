@@ -1,0 +1,32 @@
+.breadcrumb-container {}
+
+.breadcrumb {
+    @include clear-list-style();
+    display: flex;
+    align-items: center;
+
+    &__item {
+        &:not(:last-child) {
+            position: relative;
+            margin-right: $spacer;
+            color: $color-dark-ligth;
+        }
+
+        &:not(:last-child) {
+            &:after {
+                content: '/';
+                position: relative;
+                right: -($spacer / 2);
+            }
+        }
+    }
+
+    &__link {
+        color: $color-dark;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-dark-ligth;
+        }
+    }
+}

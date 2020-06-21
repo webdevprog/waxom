@@ -1,0 +1,22 @@
+.pagination-container {}
+
+.pagination {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 1px;
+        }
+
+        padding: ($spacer / 3) ($spacer / 2);
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            text-decoration: none;
+            color: $color-white;
+            background-color: $color-secondary;
+        }
+    }
+}

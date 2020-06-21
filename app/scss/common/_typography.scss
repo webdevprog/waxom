@@ -1,0 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+	color: $color-title ;
+	margin-bottom: ($spacer * 1.5);
+}
+
+@include titleRender($font-size-x-large, .2);
+
+.text-content {
+	p {
+		font-size: $base-font;
+	}
+	ul {
+		margin: 0;
+		padding-left: ($spacer * 1.5);
+		li {
+			margin-bottom: ($spacer / 2);
+		}
+	}
+    @include linx($color-primary, $color-green, $color-purple, $color-purple);
+    
+    a {
+        text-decoration: none;
+    }
+}

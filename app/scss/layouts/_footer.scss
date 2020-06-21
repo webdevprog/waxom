@@ -1,0 +1,15 @@
+.main-footer {
+	.copyright {
+		padding: $spacer 0;
+		color: $color-indigo;
+		background-color: $color-blue;
+		.company-made {
+			text-align: right;
+			a {
+				color: $color-indigo;
+			}
+		}
+	}
+}
+
+

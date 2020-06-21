@@ -1,0 +1,205 @@
+/*
+Mixin:
+1. font-face. - Include font.
+2. titleRender.
+3. input-placeholder. - set color for placeholder '...'.
+4. truncate. - Cut text '...'.
+5. linx.
+6. center.
+7. bg-block.
+8. clear-list-style.
+9. css-triangle.
+*/
+
+/* 1. font-face. */
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    @if $asset-pipeline==true {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+      font-url('#{$file-path}.woff') format('woff'),
+      font-url('#{$file-path}.ttf') format('truetype');
+    }
+
+    @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+      url('#{$file-path}.woff') format('woff'),
+      url('#{$file-path}.ttf') format('truetype');
+    }
+  }
+}
+
+/* 2. titleRender. */
+@mixin titleRender($max: 2rem, $interval: .2rem) {
+  $current-value: $max;
+
+  @for $i from 1 through 6 {
+    h#{$i} {
+      @if $i==1 {
+        font-size: $max;
+      }
+
+      @else {
+        @if $current-value>($max / 2) {
+          $current-value: $current-value - $interval;
+        }
+
+        font-size: $current-value;
+      }
+    }
+  }
+}
+
+/* 3. input-placeholder. */
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+/**/
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 5. linx. */
+@mixin linx($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+
+    &:visited {
+      color: $visit;
+    }
+
+    &:hover {
+      color: $hover;
+    }
+
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+/* 6. center. */
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+
+  @if $position=='vertical' {
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  @else if $position=='horizontal' {
+    left: 50%;
+    transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+
+  @else if $position=='both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 7. bg-block. */
+@mixin bg-block($img: false, $color: $color-black, $opacity: 0.8) {
+  @if #{$img} {
+    background-image: url(#{$img});
+  }
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #{$color};
+    opacity: $opacity;
+  }
+}
+
+/* 8. clear-list-style. */
+// remove padding, margin and list-style-type
+@mixin clear-list-style() {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* 9. css-triangle. */
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  z-index: 1;
+
+  @if $round {
+    border-radius: 3px;
+  }
+
+  @if $direction==down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    bottom: -($size);
+    @include center('horizontal');
+  }
+
+  @else if $direction==up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    top: -($size);
+    @include center('horizontal');
+  }
+
+  @else if $direction==right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    right: -($size);
+    @include center('vertical');
+  }
+
+  @else if $direction==left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    left: -($size);
+    @include center('vertical');
+  }
+}

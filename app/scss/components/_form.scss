@@ -1,0 +1,35 @@
+input:not([type="submit"]),
+textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: $spacer-outside-input;
+    padding: $spacer-inside-input;
+    border: 1px solid $color-border-input;
+    outline: none;
+
+    @include input-placeholder {
+        color: $color-primary;
+    }
+
+    &:focus:required:invalid {
+        border-color: red;
+    }
+
+    &:required:valid {
+        border-color: green;
+    }
+}
+
+form {
+    input {
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &[type="submit"] {
+            @extend .btn;
+            @extend .btn-primary;
+        }
+    }
+
+}

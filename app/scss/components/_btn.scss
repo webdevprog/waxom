@@ -1,0 +1,53 @@
+.btn {
+    font-size: $font-size-regular;
+    padding: ($spacer / 2) ($spacer * 2.5);
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        color: $white;
+        text-decoration: none;
+        background-image: $color-secondary;
+    }
+
+    &-primary {
+        color: $white;
+        background-color: $color-btn-primary;
+
+        &:hover {
+            color: $white;
+            background: $color-btn-hover-primary;
+        }
+    }
+
+    &-secondary {
+        color: $white;
+        background-color: $color-btn-secondary;
+
+        &:hover {
+            color: $white;
+            background: $color-btn-hover-secondary;
+        }
+    }
+
+    &_size_s {
+        font-size: $base-font;
+        padding: ($spacer / 3) $spacer;
+        text-transform: capitalize;
+    }
+
+    &_size_m {
+        font-size: $font-size-lg-regular;
+        padding: $spacer / 2 ($spacer * 2);
+    }
+
+    &_size_l  {
+        font-size: $font-size-lg-regular;
+        padding: $spacer ($spacer * 3);
+    }
+
+}

@@ -1,0 +1,46 @@
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: $color-primary;
+	color: #fff;
+}
+
+html {
+	font-size: 16px;
+	@include media-breakpoint-down(sm) { 
+		font-size: 14px;
+	}
+}
+
+body {
+	font-size: $base-font;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $default-font;
+	overflow-x: hidden;
+	color: $color-primary;
+	font-weight: 400;
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	&.img-width {
+		width: 100%;
+	}
+	&.right {
+		float: right;
+		margin-left: 15px;
+		@include media-breakpoint-down(md) {
+			float: none;
+			display: block;
+			margin: auto;
+			margin-bottom: $spacer;
+		}
+	}
+}
+
