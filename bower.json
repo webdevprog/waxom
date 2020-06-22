@@ -8,5 +8,8 @@
   "dependencies": {
     "css-hamburgers": "^1.1.3",
     "fontawesome": "^5.13.0"
+  },
+  "devDependencies": {
+    "swiper": "^6.0.2"
   }
 }
