@@ -6,12 +6,12 @@
     <title>Home</title>
     <link rel="stylesheet" href="../css/main.min.css"/>
   </head>
-  <body>
-    <header class="header">
+  <body class="page-home">
+    <header class="header page-home__header">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4"><a href="/"><img class="header__logo" src="/img/logo.svg"/></a>
-            <div class="header__logo-text">Waxom</div>
+          <div class="col-lg-4 header__logo-wrapper"><a href="/"><img class="header__logo" src="/img/logo.svg"/></a>
+            <div class="header__title">Waxom</div>
           </div>
           <div class="col-lg-6">
             <nav class="navigation">
@@ -34,20 +34,26 @@
     <section class="section section-slider">
       <div class="swiper-container swiper-home">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img class="swiper-home__photo" src="/img/slider.jpg"/>
-            <div class="swiper-home__subTitle">Unique and Modern Design</div>
-            <div class="swiper-home__title">Portfolio PSD Template</div>
-            <div class="swiper-home__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+          <div class="swiper-slide swiper-home__slide"><img class="swiper-home__photo" src="/img/slider.jpg"/>
+            <div class="swiper-home__content">
+              <div class="swiper-home__subTitle">Unique and Modern Design</div>
+              <div class="swiper-home__title">Portfolio PSD Template</div>
+              <div class="swiper-home__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+              <div class="swiper-home__btn">Get started</div>
+            </div>
           </div>
-          <div class="swiper-slide"><img class="swiper-home__photo" src="/img/slider.jpg"/>
-            <div class="swiper-home__subTitle">Unique and Modern Design</div>
-            <div class="swiper-home__title">Portfolio PSD Template</div>
-            <div class="swiper-home__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+          <div class="swiper-slide swiper-home__slide"><img class="swiper-home__photo" src="/img/slider.jpg"/>
+            <div class="swiper-home__content">
+              <div class="swiper-home__subTitle">Unique and Modern Design</div>
+              <div class="swiper-home__title">Portfolio PSD Template</div>
+              <div class="swiper-home__text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</div>
+              <div class="swiper-home__btn">Get started</div>
+            </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination swiper-home__pagination"></div>
+        <div class="swiper-button-prev swiper-home__btn-nav"></div>
+        <div class="swiper-button-next swiper-home__btn-nav"></div>
       </div>
     </section>
     <footer>

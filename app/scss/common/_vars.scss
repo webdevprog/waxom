@@ -16,8 +16,8 @@
 
 
 /* 1. Color Theme. */
-$color-primary: 	#333333;
-$color-secondary: 	#6c757d;
+$color-primary: 	#998675;
+$color-secondary: 	#c7b299;
 $color-success: 	#28a745;
 $color-info: 		#17a2b8;
 $color-warning: 	#ffc107;
@@ -38,12 +38,15 @@ $color-yellow: 		#ffc107;
 $color-green: 		#28a745;
 $color-teal: 		#20c997;
 $color-cyan: 		#17a2b8;
-$color-gray: 		#6c757d;
-$color-gray-dark: 	#343a40;
+$color-gray: 		#8c8c8c;
+$color-gray-dark: 	#555555;
+$color-vinous: 		#998675;
 
 /* 1.1. Color content text. */
 
-$color-text:				$color-primary;
+$text-color:				$color-gray;
+$title-color:				$color-gray-dark;
+$slider-tools-color: 		#d3c1ad;
 $color-text-link: 			$color-blue;
 $color-text-link-visited: 	$color-gray;
 $color-text-link-hover:		$color-secondary;
@@ -53,7 +56,7 @@ $color-text-link-hover:		$color-secondary;
 $color-title: $color-primary;
 
 /* 1.3. Color buttons. */
-$color-btn-primary: $color-blue;
+$color-btn-primary: $color-vinous;
 $color-btn-hover-primary: $color-danger;
 $color-btn-secondary: $color-danger;
 $color-btn-hover-secondary: $color-blue;
@@ -71,6 +74,11 @@ $font-size-lg-regular: 1.125rem;//18px
 $font-size-xl-regular: 1.25rem; //20px
 $font-size-large: 	1.45rem; 	//24px
 $font-size-x-large: 1.875rem; 	//30px
+$font-size-sm-large: 2.25rem; 	 //36px
+$font-size-extra: 3.25rem; 		//52px
+
+$slider-title-font-size: $font-size-extra;
+$slider-subtitle-font-size: ($font-size-lg-regular * 2);
 
 /* 2.2 Font Weight. */
 $font-weight-light:		300;
