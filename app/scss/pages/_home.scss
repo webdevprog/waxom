@@ -7,3 +7,56 @@
         z-index: 10;
     }
 }
+
+.section {
+    padding: $spacer * 3 0;
+
+    &-slider {
+        padding: 0;
+    }
+}
+
+.about-item {
+    text-align: center;
+
+    &__icon {
+        width: 44px;
+        height: 49px;
+        margin-bottom: $spacer;
+        fill: $color-gray-dark;
+        transition: all .5s linear;
+    }
+
+    &__title {
+        margin-bottom: $spacer / 1.5;
+        transition: all .5s linear;
+    }
+
+    &__desc {
+        margin-bottom: $spacer;
+    }
+
+    &:after {
+        content: '';
+        @include center('horizontal');
+        bottom: 0;
+        height: 3px;
+        width: 70px;
+        background-color: $color-gray-dark;
+        transition: all .5s linear;
+    }
+
+    &:hover {
+        .about-item__icon {
+            fill: $color-secondary;
+        }
+
+        .about-item__title {
+            color: $color-secondary;
+        }
+
+        &:after {
+            background-color: $color-secondary;
+        }
+    }
+}

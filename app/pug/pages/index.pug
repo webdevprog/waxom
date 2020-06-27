@@ -7,6 +7,7 @@ block variables
     - var pageClass = "page-home";
 
 block content
+
     section.section.section-slider
         .swiper-container.swiper-home
             .swiper-wrapper
@@ -21,3 +22,13 @@ block content
             .swiper-pagination.swiper-home__pagination
             .swiper-button-prev.swiper-home__btn-nav
             .swiper-button-next.swiper-home__btn-nav
+
+    section.section.section-about
+        .container-fluid
+            .row.about
+                each item in about
+                    .col-lg-3.about-item
+                        svg.about-item__icon
+                            use(xlink:href="/img/sprite.svg#"+item.icon)
+                        h3.about-item__title= item.title
+                        .about-item__desc= item.desc
