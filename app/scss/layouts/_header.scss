@@ -1,4 +1,8 @@
 .header {
+    padding: $spacer 0;
+    &__row {
+        align-items: center;
+    }
 
     &__logo-wrapper {
         display: flex;
@@ -14,5 +18,17 @@
         color: $color-white;
         font-size: $font-size-sm-large;
         font-family: $font-family-title;
+    }
+
+    &__tools {
+        display: flex;
+        justify-content: space-between;
+
+        svg {
+            cursor: pointer;
+            &:hover path {
+                fill: $color-secondary;
+            }
+        }
     }
 }

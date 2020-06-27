@@ -1,5 +1,4 @@
 .swiper-home {
-    text-align: center;
 
     &__slide {
         @include bg-block(false, $color: rgb(17, 17, 17), $opacity: 0.7);

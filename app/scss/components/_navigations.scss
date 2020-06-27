@@ -1,0 +1,17 @@
+.navigation {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        @include clear-list-style();
+    }
+
+    &__link {
+        color: $color-white;
+        font-weight: $font-weight-light;
+        &:hover,
+        &_active {
+            color: $color-secondary; 
+            text-decoration: none;
+        }
+    }
+}
