@@ -14,6 +14,15 @@
     &-slider {
         padding: 0;
     }
+
+    &-variation {
+        text-align: center;
+        background-color: $color-gray-light;
+        padding-bottom: 0;
+        &__browser {
+            margin-top: $spacer * 3;
+        }
+    }
 }
 
 .about-item {
@@ -57,6 +66,37 @@
 
         &:after {
             background-color: $color-secondary;
+        }
+    }
+}
+
+.browser {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &__img {
+        transition: bottom .5s linear;
+        bottom: 0;
+        &_center {
+            position: relative;
+            z-index: 2;
+        }
+        &_left,
+        &_right {
+            position: absolute;
+            width: 50%;
+            bottom: 0;
+            z-index: 1;
+        }
+        &_left {
+            left: 0;
+        }
+        &_right {
+            right: 0;
+        }
+
+        &:hover {
+          bottom: 10px;  
         }
     }
 }

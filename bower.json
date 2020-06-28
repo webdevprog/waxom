@@ -10,6 +10,7 @@
     "fontawesome": "^5.13.0"
   },
   "devDependencies": {
-    "swiper": "^6.0.2"
+    "swiper": "^6.0.2",
+    "jquery": "^3.5.1"
   }
 }

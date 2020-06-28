@@ -32,3 +32,15 @@ block content
                             use(xlink:href="/img/sprite.svg#"+item.icon)
                         h3.about-item__title= item.title
                         .about-item__desc= item.desc
+
+    section.section.section-variation
+        .container-fluid
+            .row
+                .col-lg-12
+                    h2= variation.title
+                    p !{variation.desc}
+                .col-lg-12
+                    .browser.section-variation__browser
+                        each photoUrl in variation.browserImg
+                            a(class="fancybox", href=photoUrl, data-fancybox="browser")
+                                img(class="browser__img browser__img_"+photoUrl.match(/\w+/g)[2], src=photoUrl)
