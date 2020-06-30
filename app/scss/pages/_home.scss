@@ -19,8 +19,32 @@
         text-align: center;
         background-color: $color-gray-light;
         padding-bottom: 0;
+
         &__browser {
             margin-top: $spacer * 3;
+        }
+    }
+
+    &-sale {
+        background-color: #f4f5f8;
+        background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
+        &__title {
+            margin-bottom: 0;
+            color: $color-white;
+            span {
+                color: $color-secondary;
+            }
+        }
+        &__text {
+            color: $color-cyan;
+            font-size: $font-size-lg-regular;
+        }
+
+        &__btn {
+            @extend .btn;
+            @extend .btn-primary;
+            @extend .btn_size_l;
+            float: right;
         }
     }
 }
@@ -74,13 +98,16 @@
     position: relative;
     display: flex;
     justify-content: center;
+
     &__img {
         transition: bottom .5s linear;
         bottom: 0;
+
         &_center {
             position: relative;
             z-index: 2;
         }
+
         &_left,
         &_right {
             position: absolute;
@@ -88,15 +115,17 @@
             bottom: 0;
             z-index: 1;
         }
+
         &_left {
             left: 0;
         }
+
         &_right {
             right: 0;
         }
 
         &:hover {
-          bottom: 10px;  
+            bottom: 10px;
         }
     }
 }

@@ -42,5 +42,17 @@ block content
                 .col-lg-12
                     .browser.section-variation__browser
                         each photoUrl in variation.browserImg
+                            |
+                            |
                             a(class="fancybox", href=photoUrl, data-fancybox="browser")
                                 img(class="browser__img browser__img_"+photoUrl.match(/\w+/g)[2], src=photoUrl)
+
+    section.section.section-sale
+        .container-fluid
+            .row.align-item-center
+                .col-lg-8
+                    h2.section-sale__title <span>Waxom</span>  Multipurpose WordPress Theme
+                    div.section-sale__text Don't Forget to Rate the Template. Thanks so much!
+                .col-lg-4
+                    a(href="#").section-sale__btn Purchase Now
+                            
