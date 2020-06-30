@@ -55,3 +55,35 @@
     }
 
 }
+
+.swiper-project {
+    &__wrapper {
+        padding-top: $spacer * 3;
+    }
+
+    &__pagination {
+        position: relative;
+        bottom: 0!important;
+        margin-top: $spacer * 3;
+        .swiper-pagination-bullet {
+            width: auto;
+            height: auto;
+            border-radius: 3px;
+            color: $color-gray;
+            padding: $spacer / 3 $spacer;
+            border: 1px solid #ebebeb;
+            background-color: transparent;
+            opacity: 1;
+            &-active {
+                background-color: $color-vinous;
+                color: $color-white;
+            }
+        }
+    }
+
+    &__more {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .btn_size_m; 
+    }
+}

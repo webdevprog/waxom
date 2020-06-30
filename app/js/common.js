@@ -13,6 +13,20 @@ $(document).ready(function () {
 		},
 	});
 
+	var projectTabs = new Swiper('.swiper-project', {
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+			renderBullet: function (index, className) {
+				console.log(this)
+				let slide = this.slides[index]
+				return '<span class="' + className + '">' + slide.dataset.title + '</span>';
+			}
+		},
+
+	});
+
 	let fancyboxImg = {
 		init() {
 			jQuery('.fancybox').fancybox();

@@ -55,4 +55,35 @@ block content
                     div.section-sale__text Don't Forget to Rate the Template. Thanks so much!
                 .col-lg-4
                     a(href="#").section-sale__btn Purchase Now
-                            
+
+    section.section.section-project
+        .container-fluid
+            .row
+                .col-lg-12
+                    h2 Our Latest Projects.
+                    .section-project__text Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. <br> Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium. 
+
+                    .swiper-container.swiper-project
+                        .swiper-pagination.swiper-project__pagination  
+                        .swiper-wrapper.swiper-project__wrapper
+                            each tab in tabProjects
+                                div(data-title=tab.slideName).swiper-slide.swiper-project__slide
+                                    .row
+                                        each project in tab.projects
+                                            .col-lg-4
+                                                article.card-project
+                                                    .card-project__photo-wrpaper
+                                                        img(src=project.img).card-project__photo
+                                                        .card-project__hover-content
+                                                            a(href="#")
+                                                                svg.card-project__icon
+                                                                    use(xlink:href="/img/sprite.svg#share-icon")
+                                                            a(href="#")
+                                                                svg.card-project__icon
+                                                                    use(xlink:href="/img/sprite.svg#lupa-icon")    
+
+                                                    .card-project__content
+                                                        h3.card-project__title= project.title
+                                                        .card-project__type= project.type 
+                                    if tab.projects.length > 5
+                                        a(class="swiper-project__more", href="#") load more

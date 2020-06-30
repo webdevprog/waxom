@@ -1,28 +1,71 @@
-.card {
-    background-color: $color-white;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+.card-project {
+    &:hover {
+        .card-project__hover-content {
+            top: 0;
+        }
+        .card-project__content {
+            background-color: $color-dark;
+            &:before {
+                opacity: 0;
+            }
+        }
+        .card-project__title {
+            color: $color-white;
+        }
+    }
+
+    &__title {
+        font-size: $font-size-lg-regular;
+        margin-bottom: 0;
+    }
+
+    &__photo-wrpaper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__icon {
+        fill: $color-white;
+        width: 35px;
+        height: 35px;
+        margin: 0 $spacer;
+        &:hover {
+            fill: $color-secondary
+        }
+    }
 
     &__photo {
         width: 100%;
         height: 250px;
         margin-bottom: 0;
         object-fit: cover;
-        &:hover {
-            cursor: pointer;
-        }
+    }
+
+    &__hover-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -100%;
+        left: 0;
+        background-color: rgba($color-black, .6);
+        transition: top .5s linear;
     }
 
     &__content {
-        p {
-            margin-bottom: 0;
+        position: relative;
+        &:before {
+            @include css-triangle($color-gray-light, up, $size: 15px, $position: absolute, $round: false);
+            left: 10%;
         }
-    }
-
-    &__title {
-        font-size: $font-size-lg-regular;
-        a {
-            color: $color-primary;
-        }
+        
+        text-align: left;
+        margin-bottom: $spacer * 2;
+        padding: $spacer;
+        background-color: $color-gray-light;
+        transition: all .5s linear;
     }
 
 }
