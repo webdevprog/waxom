@@ -86,4 +86,14 @@ block content
                                                         h3.card-project__title= project.title
                                                         .card-project__type= project.type 
                                     if tab.projects.length > 5
-                                        a(class="swiper-project__more", href="#") load more
+                                        a(class="swiper-project__more" href="#") load more
+
+    section.section.section-presentation
+        .section-presentation__content
+            svg.section-presentation__icon#btn-play
+                use(xlink:href="/img/sprite.svg#play-icon")
+            h2.section-presentation__title Waxom Video Presentation
+            p Investigationes demonstraverunt lectores legere me lius quod ii legunt <br> saepius, qui sequitur mutationem consuetudium.
+            .section-presentation__time
+        video.section-presentation__video#movie
+            source(src="/video/notebook.mp4", type="video/mp4")

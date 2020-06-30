@@ -19,7 +19,6 @@ $(document).ready(function () {
 			type: 'bullets',
 			clickable: true,
 			renderBullet: function (index, className) {
-				console.log(this)
 				let slide = this.slides[index]
 				return '<span class="' + className + '">' + slide.dataset.title + '</span>';
 			}
@@ -33,5 +32,43 @@ $(document).ready(function () {
 		}
 	}
 
+	let moviePlay = {
+		timeFormat(time) {
+			let min = Math.floor(time / 60),
+				sec = Math.floor(time % 60);
+			return time > 60 ? (min > 9 ? min : '0'+min)  +':'+ (sec < 9 ? '0' + sec : sec) : '00 : '+(time < 9 ? '0' + time : time);
+		},
+		init() {
+			let movie = $('#movie')[0],
+				obj = this,
+				playBtn = $('#btn-play'),
+				timeContainer = $('.section-presentation__time'),
+				time = Math.floor(movie.duration),
+				totalTime = obj.timeFormat(time),
+				timerID = '';
+
+			timeContainer.text(totalTime)
+			
+			playBtn.click(function() {
+				movie.play();
+				let linkObj = obj;
+				if (timerID === '') {
+					timerID = setInterval(() => {
+						time -= 1;
+						totalTime = linkObj.timeFormat(time);
+						if (time < 0) {
+							clearInterval(timerID); 
+							timerID = '';
+							time = Math.floor(movie.duration);
+						} else {
+							timeContainer.text(totalTime);
+						}
+					}, 1000)
+				}
+			});
+		}
+	}
+
+	moviePlay.init();
 	fancyboxImg.init();
 });

@@ -132,12 +132,12 @@ Mixin:
 
 /* 7. bg-block. */
 @mixin bg-block($img: false, $color: $color-black, $opacity: 0.8) {
-  @if #{$img} {
+  @if $img != false {
     background-image: url(#{$img});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
 
   &:before {

@@ -28,13 +28,16 @@
     &-sale {
         background-color: #f4f5f8;
         background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
+
         &__title {
             margin-bottom: 0;
             color: $color-white;
+
             span {
                 color: $color-secondary;
             }
         }
+
         &__text {
             color: $color-cyan;
             font-size: $font-size-lg-regular;
@@ -50,6 +53,41 @@
 
     &-project {
         text-align: center;
+    }
+
+    &-presentation {
+        @include bg-block($img: false, $color: $color-black, $opacity: 0.5);
+        padding: 0;
+
+        &__video {
+            width: 100%;
+        }
+
+        &__content {
+            color: $color-white;
+            text-align: center;
+            @include center('both');
+            z-index: 1;
+        }
+
+        &__icon {
+            fill: $color-white;
+            background-color: rgba(0, 0, 0, .3);
+            padding: $spacer;
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            margin-bottom: $spacer * 2;
+            cursor: pointer;
+        }
+
+        &__time {
+            color: $color-secondary;
+        }
+
+        &__title {
+            color: $color-white;
+        }
     }
 }
 
