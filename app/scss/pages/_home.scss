@@ -91,6 +91,51 @@
             color: $color-white;
         }
     }
+
+    &-mobile {
+        padding-bottom: 0;
+
+        &__row {
+            align-items: center;
+        }
+
+        &__photo {
+            max-width: 100%;
+        }
+
+        &__text {
+            margin-bottom: $spacer * 3;
+        }
+
+        &-list {
+            @include clear-list-style();
+            padding-left: 30px;
+            &__item {
+                position: relative;
+                left: 0;
+                padding-left: 30px;
+                transition: .3s linear;
+                margin-bottom: $spacer / 2;
+                &:before {
+                    content: '\203A';
+                    position: absolute;
+                    text-align: center;
+                    color: $color-white;
+                    font-size: $font-size-xl-regular;
+                    top: 1px;
+                    left: 0;
+                    width: 21px;
+                    line-height: 21px;
+                    height: 21px;
+                    border-radius: 50%;
+                    background-color: $color-secondary;
+                }
+                &:hover {
+                    left: 20px;
+                }
+            }
+        }
+    }
 }
 
 .about-item {
