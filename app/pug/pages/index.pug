@@ -47,7 +47,7 @@ block content
                             a(class="fancybox", href=photoUrl, data-fancybox="browser")
                                 img(class="browser__img browser__img_"+photoUrl.match(/\w+/g)[2], src=photoUrl)
 
-    section.section.section-sale
+    section.section.section_bg_dark.section-sale
         .container-fluid
             .row.align-item-center
                 .col-lg-8
@@ -111,3 +111,13 @@ block content
                         li.section-mobile-list__item Option congue nihil imperdiet doming id quod mazim placerat facer;
                         li.section-mobile-list__item Eodem modo typi, qui nunc nobis videntur parum futurum;
                         li.section-mobile-list__item Investigationes demonstraverunt lectores
+    
+    section.section.section_bg_dark.section-advantage
+        .container-fluid
+            .section-advantage__row
+                each advantage in advantages
+                    .section-advantage-item
+                        svg.section-advantage-item__icon
+                            use(xlink:href="/img/sprite.svg#"+advantage.icon)
+                        .section-advantage-item__count= advantage.count
+                        .section-advantage-item__title= advantage.title

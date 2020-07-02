@@ -11,6 +11,12 @@
 .section {
     padding: $spacer * 3 0;
 
+    &_bg {
+        &_dark {
+            background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
+        }
+    }
+
     &-slider {
         padding: 0;
     }
@@ -26,8 +32,6 @@
     }
 
     &-sale {
-        background-color: #f4f5f8;
-        background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
 
         &__title {
             margin-bottom: 0;
@@ -133,6 +137,57 @@
                 &:hover {
                     left: 20px;
                 }
+            }
+        }
+    }
+
+    &-advantage {
+        &__row {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        &-item {
+            position: relative;
+            flex: 0 1 auto;
+            padding: 0 15px;
+            text-align: center;
+            padding-bottom: $spacer * 2;
+
+            &:hover {
+                .section-advantage-item__icon {
+                    transform: rotateY(180deg);
+                }
+            }
+
+            &:before {
+                content: '';
+                @include center('horizontal');
+                bottom: 0;
+                width: 30px;
+                height: 2px;
+                background-color: $color-white;
+            }
+
+            &__icon {
+                width: 44px;
+                height: 44px;
+                fill: $color-secondary;
+                transform: rotateZ(0deg);
+                transition: .5s;
+            }
+
+            &__count {
+                margin: $spacer / 2 0;
+                font-size: $base-font * 2;
+                color: $color-white;
+            }
+
+            &__title {
+                text-transform: uppercase;
+                color: $color-secondary;
             }
         }
     }
