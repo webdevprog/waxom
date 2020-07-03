@@ -11,7 +11,7 @@
     }
 
     &__pagination {
-        bottom: 40px!important;
+        bottom: 40px !important;
 
         .swiper-pagination-bullet {
             background: $color-white;
@@ -63,8 +63,9 @@
 
     &__pagination {
         position: relative;
-        bottom: 0!important;
+        bottom: 0 !important;
         margin-top: $spacer * 3;
+
         .swiper-pagination-bullet {
             width: auto;
             height: auto;
@@ -74,6 +75,7 @@
             border: 1px solid #ebebeb;
             background-color: transparent;
             opacity: 1;
+
             &-active {
                 background-color: $color-vinous;
                 color: $color-white;
@@ -84,6 +86,37 @@
     &__more {
         @extend .btn;
         @extend .btn-primary;
-        @extend .btn_size_m; 
+        @extend .btn_size_m;
+    }
+}
+
+.swiper-recent-posts {
+    padding-bottom: $spacer * 4;
+
+    &__btn-nav {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        text-align: center;
+        bottom: -10px;
+        top: auto;
+        left: 50%;
+        transform: translate(0%, -50%);
+        border: 2px solid $color-secondary;
+        border-radius: 100%;
+
+        &:after {
+            font-size: 12px;
+            color: $color-secondary;
+            font-weight: 600;
+        }
+
+        &_prev {
+            left: calc(50% - 30px);
+        }
+
+        &_next {
+            left: calc(50% + 30px);
+        }
     }
 }

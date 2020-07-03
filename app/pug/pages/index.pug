@@ -121,3 +121,28 @@ block content
                             use(xlink:href="/img/sprite.svg#"+advantage.icon)
                         .section-advantage-item__count= advantage.count
                         .section-advantage-item__title= advantage.title
+    
+    section.section.section-recent-posts
+        .container-fluid
+            .row
+                .col-lg-12
+                    h2.section-recent-posts__title= recentPosts.title
+                    .section-recent-posts__desc !{recentPosts.desc}
+
+                    .swiper-container.swiper-recent-posts
+                        .swiper-wrapper
+                            each post in recentPosts.posts
+                                .swiper-slide.swiper-recent-posts__slide
+                                     article.card-post
+                                        .card-post__photo-wrpaper
+                                            img(src=post.photo).card-post__photo
+                                            .card-post__date
+                                                span= post.date.split(' ')[1]
+                                                span= post.date.split(' ')[0].substr(0, 3)
+                                        .card-post__content
+                                            h3.card-post__title= post.title
+                                            .card-post__desc= post.desc
+                                            a(href="#").card-post__more= post.moreBtn
+                        .swiper-button-prev.swiper-recent-posts__btn-nav.swiper-recent-posts__btn-nav_prev
+                        .swiper-button-next.swiper-recent-posts__btn-nav.swiper-recent-posts__btn-nav_next
+

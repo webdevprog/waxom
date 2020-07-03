@@ -3,12 +3,15 @@
         .card-project__hover-content {
             top: 0;
         }
+
         .card-project__content {
             background-color: $color-dark;
+
             &:before {
                 opacity: 0;
             }
         }
+
         .card-project__title {
             color: $color-white;
         }
@@ -29,6 +32,7 @@
         width: 35px;
         height: 35px;
         margin: 0 $spacer;
+
         &:hover {
             fill: $color-secondary
         }
@@ -56,16 +60,146 @@
 
     &__content {
         position: relative;
+
         &:before {
             @include css-triangle($color-gray-light, up, $size: 15px, $position: absolute, $round: false);
             left: 10%;
         }
-        
+
         text-align: left;
         margin-bottom: $spacer * 2;
         padding: $spacer;
         background-color: $color-gray-light;
         transition: all .5s linear;
+    }
+
+}
+
+.card-post {
+    &:hover {
+        .card-post__photo-wrpaper {
+            &:before {
+                top: 0;
+            }
+        }
+
+        .card-post__content {
+            border: none;
+            &:before {
+                top: 0;
+            }
+        }
+
+        .card-post__title {
+            color: $color-secondary;
+        }
+
+        .card-post__desc {
+            color: $color-white;
+        }
+
+        .card-post__date {
+            span {
+                &:first-child {
+                    background-color: $color-secondary;
+                }
+
+                &:last-child {
+                    background-color: #a48d72;
+                }
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        font-size: $font-size-lg-regular;
+        margin-bottom: $spacer;
+    }
+
+    &__date {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: $color-white;
+
+        span {
+            display: block;
+            padding: $spacer / 5 $spacer;
+            transition: .5s;
+            &:first-child {
+                border-radius: 3px 3px 0 0;
+                background-color: #363636;
+                font-size: $font-size-large;
+            }
+
+            &:last-child {
+                border-radius: 0 0 3px 3px;
+                background-color: #252525;
+            }
+        }
+    }
+
+    &__photo-wrpaper {
+        position: relative;
+        overflow: hidden;
+        @include bg-block(false, $color: #362f2d, $opacity: .7);
+
+        &:before {
+            top: -100%;
+            transition: .5s;
+        }
+    }
+
+    &__desc {
+        position: relative;
+        margin-bottom: $spacer;
+    }
+
+    &__photo {
+        width: 100%;
+        height: 250px;
+        margin-bottom: 0;
+        object-fit: cover;
+    }
+
+    &__content {
+        position: relative;
+        overflow: hidden;
+        text-align: left;
+        margin-bottom: $spacer * 2;
+        padding: $spacer;
+        border: 1px solid #f8f8f8;
+        border-top: none;
+        @include bg-block(false, $color: #362f2d, $opacity: 1);
+        &:before {
+            top: 100%;
+            transition: .5s;
+        }
+    }
+
+    &__more {
+        display: inline-block;
+        position: relative;
+        color: $color-secondary;
+        padding-right: $spacer;
+
+        &:after {
+            content: '\25B8';
+            position: absolute;
+            right: 0;
+            transition: .2s;
+            transform: translate(0, 0);
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: $color-secondary;
+
+            &:after {
+                transform: translate(10px, 0);
+            }
+        }
     }
 
 }

@@ -26,6 +26,31 @@ $(document).ready(function () {
 
 	});
 
+	var recentPostsSlider = new Swiper('.swiper-recent-posts', {
+		autoHeight: true,
+		slidesPerView: 3,
+		spaceBetween: 15,
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 1,
+			},
+			1200: {
+				slidesPerView: 3,	
+			}
+		},
+		autoplay: {
+			delay: 5000,
+		},
+		loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
 	let fancyboxImg = {
 		init() {
 			jQuery('.fancybox').fancybox();
@@ -33,7 +58,7 @@ $(document).ready(function () {
 	}
 
 	let moviePlay = {
-		
+
 		timeFormat(time) {
 			let min = Math.floor(time / 60),
 				sec = Math.floor(time % 60);
