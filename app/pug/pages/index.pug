@@ -146,3 +146,9 @@ block content
                         .swiper-button-prev.swiper-recent-posts__btn-nav.swiper-recent-posts__btn-nav_prev
                         .swiper-button-next.swiper-recent-posts__btn-nav.swiper-recent-posts__btn-nav_next
 
+    section.section.section-partners
+        .container-fluid
+            .row.section-partners__row
+                each val in partners
+                    .col-lg-3.section-partners__item
+                        img(src=val).section-partners__photo

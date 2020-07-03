@@ -204,6 +204,26 @@
             margin-bottom: $spacer * 3;
         }
     }
+
+    &-partners {
+        @include bg-block("/img/bg-partner.jpg", $color: #362f2d, $opacity: .7);
+        background-attachment: fixed;
+        padding: $spacer * 6 0;
+        &__row {
+            align-items: center;
+        }
+        &__photo {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            transition: .2s;
+            transform: scale(1);
+            &:hover {
+                filter: drop-shadow(7px 4px 4px black);
+                transform: scale(1.1);
+            }
+        }
+    }
 }
 
 .about-item {
