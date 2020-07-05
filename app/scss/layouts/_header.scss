@@ -1,5 +1,6 @@
 .header {
     padding: $spacer 0;
+
     &__row {
         align-items: center;
     }
@@ -23,12 +24,16 @@
     &__tools {
         display: flex;
         justify-content: space-between;
+    }
 
-        svg {
-            cursor: pointer;
-            &:hover path {
-                fill: $color-secondary;
-            }
+    &__icon {
+        cursor: pointer;
+        fill: $color-white;
+        width: 24px;
+        height: 24px;
+
+        &:hover {
+            fill: $color-secondary;
         }
     }
 }

@@ -12,7 +12,8 @@ header(class='header ' + pageClass+'__header')
                             li.navitagation__item
                                 a(href=item.link).navigation__link= item.name
             .col-lg-1.offset-lg-1.header__tools
-                span.icon.icon-cart
-                    include ../components/icons/icon-cart.svg
-                span.icon.icon-search
-                    include ../components/icons/icon-search.svg
+                svg.header__icon
+                    use(xlink:href="/img/sprite.svg#cart-icon")
+                svg.header__icon
+                    use(xlink:href="/img/sprite.svg#search-icon")
+
