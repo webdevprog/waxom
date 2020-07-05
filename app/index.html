@@ -10,11 +10,12 @@
     <header class="header page-home__header">
       <div class="container-fluid">
         <div class="row header__row">
-          <div class="col-lg-4 header__logo-wrapper"><a href="/"><img class="header__logo" src="/img/logo.svg"/></a>
+          <div class="col-lg-4 col-4 header__logo-wrapper"><a href="/"><img class="header__logo" src="/img/logo.svg"/></a>
             <div class="header__title">Waxom</div>
           </div>
-          <div class="col-lg-6">
-            <nav class="navigation">
+          <div class="col-lg-6 col-4 header__navigation-wrapper">
+            <button class="hamburger header__navigation-wrapper-btn hamburger--collapse" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+            <nav class="navigation header__navigation" id="menu-header">
               <ul class="navigation__list">
                 <li class="navitagation__item"><a class="navigation__link" href="#">Home</a></li>
                 <li class="navitagation__item"><a class="navigation__link" href="#">About Us</a></li>
@@ -27,7 +28,7 @@
               </ul>
             </nav>
           </div>
-          <div class="col-lg-1 offset-lg-1 header__tools">
+          <div class="col-lg-1 col-4 header__tools">
             <svg class="header__icon">
               <use xlink:href="/img/sprite.svg#cart-icon"></use>
             </svg>

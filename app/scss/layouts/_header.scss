@@ -8,10 +8,26 @@
     &__logo-wrapper {
         display: flex;
         align-items: center;
+        @extend .order-2;
+        @extend .order-lg-1;
+        @include media-breakpoint-down(md) {
+            justify-content: center;
+        }
     }
 
     &__logo {
         max-width: 100px;
+    }
+
+    &__navigation-wrapper {
+        @extend .order-1;
+        @extend .order-lg-2;
+        &-btn {
+            display: none;
+            @include media-breakpoint-down(md) {
+                display: block;
+            }
+        }
     }
 
     &__title {
@@ -19,11 +35,19 @@
         color: $color-white;
         font-size: $font-size-sm-large;
         font-family: $font-family-title;
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
     }
 
     &__tools {
         display: flex;
         justify-content: space-between;
+        @extend .offset-lg-1;
+        @extend .order-3;
+        @include media-breakpoint-down(md) {
+            justify-content: flex-end;
+        }
     }
 
     &__icon {
@@ -31,9 +55,21 @@
         fill: $color-white;
         width: 24px;
         height: 24px;
+        &:not(:last-child) {
+            margin-right: $spacer;
+        }
 
         &:hover {
             fill: $color-secondary;
         }
+    }
+}
+
+.navigation {
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+    @include media-breakpoint-down(md) {
+        display: none;
     }
 }
