@@ -1,15 +1,131 @@
-.main-footer {
-	.copyright {
-		padding: $spacer 0;
-		color: $color-indigo;
-		background-color: $color-blue;
-		.company-made {
-			text-align: right;
-			a {
-				color: $color-indigo;
+.footer {
+	color: $color-gray-dark;
+    &-wrapper {
+        background-color: #191919;
+        padding: ($spacer * 2) 0;
+    }
+
+    &__title {
+        font-family: $font-family-title;
+        font-size: $font-size-large;
+        color: $color-white;
+        margin-bottom: $spacer;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: $spacer * 2;
+
+        &-photo {
+            max-width: 100%;
+            margin-right: $spacer;
+        }
+
+        &-text {
+            font-family: $font-family-title;
+            font-size: $font-size-large;
+            color: $color-white;
+        }
+    }
+
+    &__about-text {
+        margin-bottom: $spacer;
+    }
+
+    &__about-more {
+        color: $color-white;
+
+        &:hover {
+            text-decoration: none;
+            color: $color-secondary;
+        }
+    }
+
+    &-card {
+        &-item {
+            &:not(:last-child) {
+				border-bottom: 1px solid #252525;
+				margin-bottom: $spacer;
+				padding-bottom: $spacer;
+			}
+			
+			&:hover &__desc {
+				color: $color-secondary;
+			}
+
+			&:hover &__date,
+			&:hover &__time {
+				color: $color-white;
+			}
+
+            &__desc {
+				transition: .2s;
+			}
+
+			&__date {
+				margin-bottom: $spacer / 2;
+				transition: .2s;
+			}
+			
+			&__time {
+				margin-top: $spacer / 2;
+				transition: .2s;
+			}
+        }
+    }
+
+    &-widget {
+		display: grid;
+		grid: auto / repeat(auto-fill, minmax(130px, 1fr));
+		gap: 10px;
+        &__photo {
+			max-width: 100%;
+			transition: .2s;
+			&:hover {
+				filter: sepia(20);
 			}
 		}
-	}
+    }
+
+    &-copyright {
+        background-color: #111111;
+        padding: ($spacer * 2) 0;
+
+        &__text {
+			margin-right: $spacer;
+			 span {
+				 color: $color-secondary;
+			 }
+		}
+
+		&__info {
+			display: flex;
+		}
+
+		&__designe {
+			text-align: right;
+		}
+
+        &-menu {
+			
+            &__list {
+				display: flex;
+				@include clear-list-style();
+			}
+
+            &__item {
+				margin: 0 $spacer;
+			}
+
+            &__link {
+				color: $color-gray-dark;
+				transition: .2s;
+				&:hover {
+					color: $color-secondary;
+					text-decoration: none;
+				}
+			}
+        }
+    }
 }
-
-
