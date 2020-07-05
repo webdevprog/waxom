@@ -24,8 +24,10 @@
         @extend .order-lg-2;
         &-btn {
             display: none;
+
             @include media-breakpoint-down(md) {
                 display: block;
+                outline: none!important;
             }
         }
     }
@@ -62,14 +64,5 @@
         &:hover {
             fill: $color-secondary;
         }
-    }
-}
-
-.navigation {
-    @include media-breakpoint-up(md) {
-        display: block;
-    }
-    @include media-breakpoint-down(md) {
-        display: none;
     }
 }

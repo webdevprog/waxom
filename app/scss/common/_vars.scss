@@ -62,6 +62,9 @@ $color-btn-hover-primary: $color-danger;
 $color-btn-secondary: $color-danger;
 $color-btn-hover-secondary: $color-blue;
 
+$hamburger-layer-color: $color-white;
+$hamburger-active-layer-color: $color-secondary;
+
 /* 2. Typography. */
 $default-font: 'Montserrat', sans-serif;
 $font-family-text: 'Montserrat', sans-serif;
@@ -119,3 +122,5 @@ $size-social: 40px;
 $border-radius-social: 5px; 
 $color-social: $color-primary;
 $color-hover-social: #01ABCE;
+
+$mobile-menu-width: 265px;

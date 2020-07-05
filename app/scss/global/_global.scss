@@ -18,11 +18,20 @@ body {
 	font-size: $base-font;
 	min-width: 320px;
 	position: relative;
+	left: 0;
 	line-height: 1.65;
 	font-family: $default-font;
 	overflow-x: hidden;
 	color: $color-gray;
 	font-weight: 400;
+	height:100%;
+	transition: left .5s linear;
+	&.is-open-menu {
+		@include media-breakpoint-down(md) {
+			left: $mobile-menu-width;
+			overflow: hidden;
+		}
+	}
 }
 
 .container-fluid {

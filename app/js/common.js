@@ -106,10 +106,10 @@ $(document).ready(function () {
 		isMenuBody: false,
 		btnOpen() {
 			let menu = this.menu;
-			$('.header__navigation-btn').click(function() {
+			$('.header__navigation-wrapper-btn').click(function() {
 				$(this).toggleClass('is-active');
-				$('body').addClass('page__navigation_opened')
-				menu.toggleClass('header__navigation-wrapper_open');
+				$('body').toggleClass('is-open-menu');
+				menu.toggleClass('navigation_open');
 			});
 		},
 		init() {
