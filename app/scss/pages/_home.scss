@@ -24,7 +24,9 @@
     &-variation {
         text-align: center;
         background-color: $color-gray-light;
-        padding-bottom: 0;
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 0;
+        }
 
         &__browser {
             margin-top: $spacer * 3;
@@ -32,7 +34,9 @@
     }
 
     &-sale {
-
+        @include media-breakpoint-down(lg) {
+            text-align: center;
+        }
         &__title {
             margin-bottom: 0;
             color: $color-white;
@@ -45,6 +49,9 @@
         &__text {
             color: $color-cyan;
             font-size: $font-size-lg-regular;
+            @include media-breakpoint-down(lg) {
+                margin-bottom: $spacer * 2;
+            }
         }
 
         &__btn {
@@ -52,6 +59,9 @@
             @extend .btn-primary;
             @extend .btn_size_l;
             float: right;
+            @include media-breakpoint-down(lg) {
+                float: none;
+            }
         }
     }
 
@@ -97,7 +107,9 @@
     }
 
     &-mobile {
-        padding-bottom: 0;
+        @include media-breakpoint-up(md) {
+            padding-bottom: 0;
+        }
 
         &__row {
             align-items: center;
@@ -105,6 +117,9 @@
 
         &__photo {
             max-width: 100%;
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
         }
 
         &__text {
@@ -158,6 +173,9 @@
             padding: 0 15px;
             text-align: center;
             padding-bottom: $spacer * 2;
+            @include media-breakpoint-down(md) {
+                margin-bottom: $spacer * 2;
+            }
 
             &:hover {
                 .section-advantage-item__icon {
@@ -209,15 +227,18 @@
         @include bg-block("/img/bg-partner.jpg", $color: #362f2d, $opacity: .7);
         background-attachment: fixed;
         padding: $spacer * 6 0;
+
         &__row {
             align-items: center;
         }
+
         &__photo {
             display: block;
             margin: 0 auto;
             max-width: 100%;
             transition: .2s;
             transform: scale(1);
+
             &:hover {
                 filter: drop-shadow(7px 4px 4px black);
                 transform: scale(1.1);
@@ -228,6 +249,10 @@
 
 .about-item {
     text-align: center;
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: $spacer * 2;
+    }
 
     &__icon {
         width: 44px;
@@ -274,23 +299,34 @@
 .browser {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+
 
     &__img {
         transition: bottom .5s linear;
+        max-width: 100%;
         bottom: 0;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
         &_center {
             position: relative;
             z-index: 2;
+
         }
 
         &_left,
         &_right {
-            position: absolute;
-            width: 50%;
-            bottom: 0;
-            z-index: 1;
+            @include media-breakpoint-up(lg) {
+                position: absolute;
+                width: 50%;
+                bottom: 0;
+                z-index: 1;
+            }
         }
 
         &_left {
@@ -300,6 +336,7 @@
         &_right {
             right: 0;
         }
+
 
         &:hover {
             bottom: 10px;

@@ -27,7 +27,7 @@ block content
         .container-fluid
             .row.about
                 each item in about
-                    .col-lg-3.about-item
+                    .col-md-3.col-6.about-item
                         svg.about-item__icon
                             use(xlink:href="/img/sprite.svg#"+item.icon)
                         h3.about-item__title= item.title
@@ -70,7 +70,7 @@ block content
                                 div(data-title=tab.slideName).swiper-slide.swiper-project__slide
                                     .row
                                         each project in tab.projects
-                                            .col-lg-4
+                                            .col-lg-4.col-sm-6
                                                 article.card-project
                                                     .card-project__photo-wrpaper
                                                         img(src=project.img).card-project__photo
@@ -101,9 +101,9 @@ block content
     section.section.section-mobile
         .container-fluid
             .row.section-mobile__row
-                .col-lg-5 
+                .col-md-5
                     img(src="/img/iphone-in-hand.png").section-mobile__photo
-                .col-lg-7
+                .col-md-7.col-sm-12
                     h2.section-mobile__title Excellent for Mobile Devices.
                     div.section-mobile__text Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
                     ul.section-mobile-list
@@ -150,5 +150,5 @@ block content
         .container-fluid
             .row.section-partners__row
                 each val in partners
-                    .col-lg-3.section-partners__item
+                    .col-md-3.col-6.section-partners__item
                         img(src=val).section-partners__photo
