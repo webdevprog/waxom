@@ -10,7 +10,19 @@
         font-size: $font-size-large;
         color: $color-white;
         margin-bottom: $spacer;
-    }
+	}
+	
+	&__twits {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+
+	&__recent-posts {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
 
     &__logo {
         display: flex;
@@ -90,7 +102,7 @@
 
     &-copyright {
         background-color: #111111;
-        padding: ($spacer * 2) 0;
+		padding: ($spacer * 2) 0;
 
         &__text {
 			margin-right: $spacer;
@@ -101,16 +113,24 @@
 
 		&__info {
 			display: flex;
+			@include media-breakpoint-down(sm) {
+				justify-content: center;
+				margin-bottom: $spacer;
+			}
 		}
 
 		&__designe {
 			text-align: right;
+			@include media-breakpoint-down(sm) {
+				text-align: center;
+			}
 		}
 
         &-menu {
 			
             &__list {
 				display: flex;
+				flex-wrap: wrap;
 				@include clear-list-style();
 			}
 

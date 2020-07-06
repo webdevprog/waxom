@@ -36,11 +36,17 @@
         font-size: $slider-title-font-size;
         font-family: $font-family-title;
         font-weight: $font-weight-bold;
+        @include media-breakpoint-down(sm) {
+            font-size: $slider-title-font-size / 1.5; 
+        }
     }
 
     &__subTitle {
         font-size: $slider-subtitle-font-size;
         font-family: $font-family-title;
+        @include media-breakpoint-down(sm) {
+            font-size: $slider-subtitle-font-size / 1.5; 
+        }
     }
 
     &__btn {

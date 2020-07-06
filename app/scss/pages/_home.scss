@@ -238,6 +238,9 @@
             max-width: 100%;
             transition: .2s;
             transform: scale(1);
+            @include media-breakpoint-down(sm) {
+                padding: $spacer 0;
+            }
 
             &:hover {
                 filter: drop-shadow(7px 4px 4px black);

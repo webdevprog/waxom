@@ -29,6 +29,7 @@ body {
 		overflow: hidden;
         & > .wrapper {
             @include media-breakpoint-down(md) {
+				position: fixed;
 				transform: translate($mobile-menu-width, 0);
             }
         }
@@ -38,6 +39,7 @@ body {
 
 .wrapper {
 	position: relative;
+	width: 100%;
 	transform: translate(0, 0);
 	transition: transform .5s linear;
 }

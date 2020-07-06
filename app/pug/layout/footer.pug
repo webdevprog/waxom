@@ -2,27 +2,27 @@ footer.footer
     .footer-wrapper
         .container-fluid
             .row
-                .col-lg-3
+                .col-md-3.col-sm-6
                     .footer__logo
                         img(src="/img/logo.svg").footer__logo-photo
                         .footer__logo-text Waxom
                     .footer__about-text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.
                     a(href="#").footer__about-more Read more
-                .col-lg-3
+                .col-md-3.footer__recent-posts
                     .footer__title Recent Posts
-                    .footer-card.footer__recent-posts
+                    .footer-card
                         each post in recentPosts.posts
                             .footer-card-item
                                 .footer-card-item__date= post.date
                                 .footer-card-item__desc= post.desc
-                .col-lg-3
+                .col-md-3.footer__twits
                     .footer__title Our Twitter
-                    .footer-card.footer__twits
+                    .footer-card
                         each twit in twitters
                             .footer-card-item
                                 .footer-card-item__desc= twit.twitText
                                 .footer-card-item__time= twit.time
-                .col-lg-3
+                .col-md-3.col-sm-6
                     .footer__title Dribbble Widget
                     .footer-widget
                         a(href="#").footer-widget__link
@@ -37,7 +37,7 @@ footer.footer
     .footer-copyright
         .container-fluid
             .row
-                .col-lg-6.footer-copyright__info
+                .col-md-8.footer-copyright__info
                     .footer-copyright__text Copyright © 2015 <span>Waxom</span>
                     nav.footer-copyright-menu
                         ul.footer-copyright-menu__list
@@ -49,5 +49,5 @@ footer.footer
                                 a(href="#").footer-copyright-menu__link FAQ
                             li.footer-copyright-menu__item
                                 a(href="#").footer-copyright-menu__link Support
-                .col-lg-6.footer-copyright__designe
+                .col-md-4.footer-copyright__designe
                     .footer-copyright__text Designed by ThemeFire
