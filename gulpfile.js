@@ -170,5 +170,9 @@ gulp.task('build', () => {
 	var buildFonts = gulp.src([
 		'app/fonts/**/*',
 		]).pipe(gulp.dest('dist/fonts'));
+
+	var buildFonts = gulp.src([
+		'app/video/**/*',
+		]).pipe(gulp.dest('dist/video'));
 	
 })
