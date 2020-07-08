@@ -45,7 +45,7 @@ gulp.task('styles', function() {
 // JS
 gulp.task('scripts', function() {
 	return gulp.src([
-		'app/libs/swiper/build/swiper.bundle.js',
+		'app/libs/swiper/build/swiper-bundle.js',
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/fancybox/dist/jquery.fancybox.min.js',
 		'app/js/common.js', // Always at the end
@@ -53,6 +53,7 @@ gulp.task('scripts', function() {
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.stream())
 });
 
 gulp.task('clean', function() {
