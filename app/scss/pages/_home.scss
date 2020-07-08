@@ -224,7 +224,7 @@
     }
 
     &-partners {
-        @include bg-block("/img/bg-partner.jpg", $color: #362f2d, $opacity: .7);
+        @include bg-block("../img/bg-partner.jpg", $color: #362f2d, $opacity: .7);
         background-attachment: fixed;
         padding: $spacer * 6 0;
 

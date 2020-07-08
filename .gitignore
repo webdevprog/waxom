@@ -2,8 +2,9 @@
 /dist/
 /.git/
 /app/css/
-/app/js/scripts.min.js
+/app/js/*
 /app/libs/*
+ !/app/js/common.js
 /**/_backstage
 /**/package-lock.json
 /**/Thumbs.db

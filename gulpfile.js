@@ -8,7 +8,7 @@ var syntax = 'scss', // Syntax: sass or scss;
 		pug      	  = require('gulp-pug'),
 		browserSync   = require('browser-sync'),
 		concat        = require('gulp-concat'),
-		uglify        = require('gulp-uglify'),
+		uglify        = require('gulp-uglify-es').default,
 		cleancss      = require('gulp-clean-css'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
@@ -51,9 +51,8 @@ gulp.task('scripts', function() {
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	.pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
-	.pipe(browserSync.reload({ stream: true }))
 });
 
 // Images @x1 & @x2 + Compression | Required graphicsmagick (sudo apt update; sudo apt install graphicsmagick)
