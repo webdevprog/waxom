@@ -55,6 +55,18 @@ gulp.task('scripts', function() {
 	.pipe(gulp.dest('app/js'))
 });
 
+gulp.task('clean', function() {
+	return gulp.src([
+		'app/libs/swiper/build/swiper.bundle.js',
+		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/fancybox/dist/jquery.fancybox.min.js',
+		'app/js/common.js', // Always at the end
+		])
+	.pipe(concat('scripts.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('app/js'))
+});
+
 // Images @x1 & @x2 + Compression | Required graphicsmagick (sudo apt update; sudo apt install graphicsmagick)
 gulp.task('img1x', function() {
 	return gulp.src('app/img/_src/**/*.*')
@@ -146,7 +158,7 @@ if (gulpVersion == 4) {
 };
 
 
-gulp.task('build', () => {
+gulp.task('build', function(done) {
 	
 	del.sync('dist');
 	
@@ -173,5 +185,6 @@ gulp.task('build', () => {
 	var buildFonts = gulp.src([
 		'app/video/**/*',
 		]).pipe(gulp.dest('dist/video'));
-	
+
+		done();
 })
