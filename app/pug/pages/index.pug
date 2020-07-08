@@ -29,7 +29,7 @@ block content
                 each item in about
                     .col-md-3.col-6.about-item
                         svg.about-item__icon
-                            use(xlink:href="/img/sprite.svg#"+item.icon)
+                            use(xlink:href="img/sprite.svg#"+item.icon)
                         h3.about-item__title= item.title
                         .about-item__desc= item.desc
 
@@ -77,10 +77,10 @@ block content
                                                         .card-project__hover-content
                                                             a(href="#")
                                                                 svg.card-project__icon
-                                                                    use(xlink:href="/img/sprite.svg#share-icon")
+                                                                    use(xlink:href="img/sprite.svg#share-icon")
                                                             a(href="#")
                                                                 svg.card-project__icon
-                                                                    use(xlink:href="/img/sprite.svg#lupa-icon")    
+                                                                    use(xlink:href="img/sprite.svg#lupa-icon")    
 
                                                     .card-project__content
                                                         h3.card-project__title= project.title
@@ -91,7 +91,7 @@ block content
     section.section.section-presentation
         .section-presentation__content
             svg.section-presentation__icon#btn-play
-                use(xlink:href="/img/sprite.svg#play-icon")
+                use(xlink:href="img/sprite.svg#play-icon")
             h2.section-presentation__title Waxom Video Presentation
             p Investigationes demonstraverunt lectores legere me lius quod ii legunt <br> saepius, qui sequitur mutationem consuetudium.
             .section-presentation__time
@@ -102,7 +102,7 @@ block content
         .container-fluid
             .row.section-mobile__row
                 .col-md-5
-                    img(src="/img/iphone-in-hand.png").section-mobile__photo
+                    img(src="img/iphone-in-hand.png").section-mobile__photo
                 .col-md-7.col-sm-12
                     h2.section-mobile__title Excellent for Mobile Devices.
                     div.section-mobile__text Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
@@ -118,7 +118,7 @@ block content
                 each advantage in advantages
                     .section-advantage-item
                         svg.section-advantage-item__icon
-                            use(xlink:href="/img/sprite.svg#"+advantage.icon)
+                            use(xlink:href="img/sprite.svg#"+advantage.icon)
                         .section-advantage-item__count= advantage.count
                         .section-advantage-item__title= advantage.title
     

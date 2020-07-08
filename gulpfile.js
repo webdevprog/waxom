@@ -51,7 +51,7 @@ gulp.task('scripts', function() {
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });
@@ -160,7 +160,7 @@ gulp.task('build', () => {
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildCss = gulp.src([
-		'app/img**/*',
+		'app/img/**/*',
 	]).pipe(gulp.dest('dist/img'));
 
 	var buildJs = gulp.src([
