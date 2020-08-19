@@ -38,7 +38,7 @@ $(document).ready(function () {
 				slidesPerView: 2,
 			},
 			1200: {
-				slidesPerView: 3,	
+				slidesPerView: 3,
 			}
 		},
 		autoplay: {
@@ -106,21 +106,31 @@ $(document).ready(function () {
 		isMenuBody: false,
 		btnOpen() {
 			let menu = this.menu;
-			$('.header__navigation-wrapper-btn').click(function() {
+			$('.header__navigation-wrapper-btn').click(function () {
+				let isOpenMenu;
 				$(this).toggleClass('is-active');
 				$('body').toggleClass('is-open-menu');
 				menu.toggleClass('navigation_open');
+				$('body .wrapper').css('position', 'fixed');
+				
+				$('body > .wrapper').on('transitionend', function (event) {
+					let elm = event.target.className;
+					isOpenMenu = $('body').hasClass('is-open-menu');
+					if (elm === 'wrapper' && !isOpenMenu) {
+						$('body > .wrapper').css('position', 'relative');
+					}
+				});
 			});
 		},
 		init() {
 			let menu = this.menu,
 				headerNav = $('.header .header__navigation-wrapper')
-				body = $('body');
+			body = $('body');
 
 			if (window.outerWidth <= 992) {
 				body.prepend(menu);
 				this.isMenuBody = true;
-			} else if (this.isMenuBody)  {
+			} else if (this.isMenuBody) {
 				headerNav.append(menu);
 				this.isMenuBody = false;
 			}
@@ -132,7 +142,7 @@ $(document).ready(function () {
 	menuHeader.btnOpen();
 	fancyboxImg.init();
 
-	$(window).resize(function() {
+	$(window).resize(function () {
 		menuHeader.init();
 	});
 });

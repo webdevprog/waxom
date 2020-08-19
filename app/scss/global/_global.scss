@@ -25,12 +25,14 @@ body {
     color: $color-gray;
     font-weight: 400;
 
+
     &.is-open-menu {
 		overflow: hidden;
         & > .wrapper {
             @include media-breakpoint-down(md) {
-				position: fixed;
-				transform: translate($mobile-menu-width, 0);
+                position: fixed;
+                left: $mobile-menu-width;
+                transition: left .5s linear;
             }
         }
 
@@ -38,10 +40,9 @@ body {
 }
 
 .wrapper {
-	position: relative;
 	width: 100%;
-	transform: translate(0, 0);
-	transition: transform .5s linear;
+    left: 0;
+    transition: left .5s linear;
 }
 
 .container-fluid {
